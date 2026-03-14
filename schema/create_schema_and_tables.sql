@@ -123,4 +123,19 @@ CREATE TABLE IF NOT EXISTS `pokemon-corporate-registry.pogo_corp.dim_variant_evo
 
 
 
+-- ===============================================
+-- Typing error in evolves_to
+-- TABLE DROP AND RECREATE
+-- ===============================================
+
+DROP TABLE `pokemon-corporate-registry.pogo_corp.dim_variant_evolution_override`;
+
+CREATE TABLE `pokemon-corporate-registry.pogo_corp.dim_variant_evolution_override`
+(
+  pokedex_number INT64,
+  variant_region STRING NOT NULL,
+  evolves_to INT64
+);
+
+
 
