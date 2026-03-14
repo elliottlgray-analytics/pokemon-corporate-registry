@@ -98,4 +98,29 @@ CREATE TABLE IF NOT EXISTS `pokemon-corporate-registry.pogo_corp.move_change_log
     change_reason   STRING
   );
 
+-- ===================================================
+-- ADDING ADDITIONAL TABLES
+-- During database seeding, it became clear that more
+-- tables were needed
+-- ===================================================
+
+-- REGIONAL SPECIES VARIANTS
+CREATE TABLE IF NOT EXISTS `pokemon-corporate-registry.pogo_corp.dim_species_variants` 
+  (
+    pokedex_number   INT64,
+    variant_region   STRING NOT NULL,
+    primary_type     STRING NOT NULL,
+    secondary_type   STRING
+  );
+
+-- REGIONAL VARIANT EVOLUTION OVERRIDE
+CREATE TABLE IF NOT EXISTS `pokemon-corporate-registry.pogo_corp.dim_variant_evolution_override`
+  (
+    pokedex_number   INT64,
+    variant_region   STRING NOT NULL,
+    evolves_to       STRING NOT NULL
+  );
+
+
+
 
